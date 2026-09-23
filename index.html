@@ -72,6 +72,15 @@
             font-size: 0.975rem;
         }
 
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -159,9 +168,21 @@
         }
 
         .contact-email {
-            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: color 0,2s;
+        }
+
+        .contact-email:hover {
             color: var(--text-muted);
         }
+
+        .copy-hint {
+            font-size: 0.75rem;
+            color:  var(--accent);
+            margin-left: 6px;
+        }
+
     </style>
 </head>
 <body>
@@ -225,9 +246,26 @@
                 <a href="https://www.youtube.com/@travletothefurureprogramming" target="_blank" class="link-btn">Technical YouTube</a>
                 <a href="https://www.youtube.com/@DanteRespawnTheory" target="_blank" class="link-btn">Gaming YouTube</a>
             </div>
-            <p class="contact-email">Email: gregiosifidis2@gmail.com</p>
+            <p class="contact-email" onclick="copyEmail(this)">
+                Email: <span id="email-text">gregiosifidis2@gmail.com</span>
+                <span class="copy-hint">(Click to copy)</span>
+            </p>
         </section>
     </div>
 
+    <footer>
+        <p>&copy; 2026 Grigorios Iosifidis. Created with simplicity.</p>
+    </footer>
+
+    <script>
+        function copyEmail(element) {
+            const email = document.getElementById('email-text').innerText;
+            navigator.clipboard.writeText(email)
+            const hint = element.querySelector('.copy-hint'); 
+            hint.innerText = '(Copied!)'
+            setTimeout(() => { hint.innerText = '(Click to copy)'; }, 2000);       
+        
+        }
+    </script>
 </body>
 </html>
