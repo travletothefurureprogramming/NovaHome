@@ -1,196 +1,149 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaHome - Grigorios Iosifidis</title>
+
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        :root {
-            --bg-color: #0f1115;
-            --card-bg: #161920;
-            --border-color: #262a36;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0284c7;
-            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-family);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+            margin: 0;
+            padding: 30px 15px;
+            background: #111;
+            color: #eee;
+            font-family: Arial, sans-serif;
         }
 
         .container {
-            max-width: 680px;
-            margin: 0 auto;
+            max-width: 650px;
+            margin: auto;
         }
 
         header {
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
         }
 
         h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #ffffff;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-            font-weight: 400;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
+            margin: 0;
+            font-size: 30px;
         }
 
         h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            letter-spacing: -0.01em;
+            margin-bottom: 10px;
         }
 
         p {
-            color: var(--text-muted);
-            font-size: 0.975rem;
+            color: #aaa;
+            line-height: 1.6;
         }
 
-        footer {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
+        section {
+            margin-top: 35px;
+        }
+
+        .subtitle {
+            margin-top: 5px;
         }
 
         .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.8rem;
-            color: #a1a1aa;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 1rem;
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #aaa;
+            font-size: 13px;
         }
 
         .status-dot {
+            display: inline-block;
             width: 7px;
             height: 7px;
-            background-color: #22c55e;
+            margin-right: 5px;
+            background: #22c55e;
             border-radius: 50%;
-            box-shadow: 0 0 8px #22c44e;
+        }
+
+        .skills-list,
+        .projects-list {
+            padding: 0;
+            list-style: none;
         }
 
         .skills-list {
-            list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 8px;
         }
 
         .skills-list li {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 0.35rem 0.85rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            color: var(--text-main);
-        }
-
-        .projects-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            padding: 7px 10px;
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 5px;
         }
 
         .project-item {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: border-color 0.2s ease;
+            margin-bottom: 10px;
+            padding: 12px;
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 5px;
         }
 
-        .project-item:hover {
-            border-color: #3b4252;
-        }
-
-        .project-title {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-main);
-        }
-
-        .link-btn {
-            display: inline-block;
-            color: var(--accent);
+        a {
+            color: #38bdf8;
             text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
         }
 
-        .link-btn:hover {
-            color: var(--accent-hover);
+        a:hover {
             text-decoration: underline;
         }
 
         .contact-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 15px;
         }
 
         .contact-email {
             cursor: pointer;
-            display: inline-block;
-            transition: color 0,2s;
-        }
-
-        .contact-email:hover {
-            color: var(--text-muted);
         }
 
         .copy-hint {
-            font-size: 0.75rem;
-            color:  var(--accent);
-            margin-left: 6px;
+            color: #38bdf8;
+            font-size: 12px;
         }
 
+        footer {
+            max-width: 650px;
+            margin: 50px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
+
         <header>
             <h1>I'm Grigorios Iosifidis</h1>
             <p class="subtitle">Student and Programmer</p>
+
             <div class="status-badge">
                 <span class="status-dot"></span>
                 Building & Open for Collaboration
@@ -200,14 +153,18 @@
         <section>
             <h2>Summary</h2>
             <p>
-                I am an ambitious student with a deep passion for the intersection of Robotics and Artificial Intelligence (AI). 
-                I have a strong foundation in programming (Python/C++) and embedded systems (Arduino). 
-                My goal is to create autonomous systems and work as an engineer in leading companies.
+                I am an ambitious student with a deep passion for the intersection
+                of Robotics and Artificial Intelligence (AI).
+                I have a strong foundation in programming (Python/C++)
+                and embedded systems (Arduino).
+                My goal is to create autonomous systems and work as an engineer
+                in leading companies.
             </p>
         </section>
 
         <section>
             <h2>My Skills</h2>
+
             <ul class="skills-list">
                 <li>Robotics</li>
                 <li>Python</li>
@@ -218,54 +175,78 @@
 
         <section>
             <h2>My Projects</h2>
+
             <ul class="projects-list">
+
                 <li class="project-item">
-                    <span class="project-title">Edge-AI Home Monitoring System</span>
-                    <a href="https://github.com/travletothefurureprogramming/Edge-AI-Home-Monitoring-System" target="_blank" class="link-btn">Repository &rarr;</a>
+                    <span>Edge-AI Home Monitoring System</span>
+                    <a href="https://github.com/travletothefurureprogramming/Edge-AI-Home-Monitoring-System" target="_blank">
+                        Repository →
+                    </a>
                 </li>
+
                 <li class="project-item">
-                    <span class="project-title">Py-Watchdog: Smart Folder Automation Hub</span>
-                    <a href="https://github.com/travletothefurureprogramming/smart_folder_automation" target="_blank" class="link-btn">Repository &rarr;</a>
+                    <span>Py-Watchdog: Smart Folder Automation Hub</span>
+                    <a href="https://github.com/travletothefurureprogramming/smart_folder_automation" target="_blank">
+                        Repository →
+                    </a>
                 </li>
+
                 <li class="project-item">
-                    <span class="project-title">Remote PC Control & Monitoring Server</span>
-                    <a href="https://github.com/travletothefurureprogramming/Remote-PC-Control---Monitoring-Server" target="_blank" class="link-btn">Repository &rarr;</a>
+                    <span>Remote PC Control & Monitoring Server</span>
+                    <a href="https://github.com/travletothefurureprogramming/Remote-PC-Control---Monitoring-Server" target="_blank">
+                        Repository →
+                    </a>
                 </li>
+
                 <li class="project-item">
-                    <span class="project-title">NexusAI</span>
-                    <a href="https://github.com/travletothefurureprogramming/NexusAI/" target="_blank" class="link-btn">Repository &rarr;</a>
+                    <span>NexusAI</span>
+                    <a href="https://github.com/travletothefurureprogramming/NexusAI/" target="_blank">
+                        Repository →
+                    </a>
                 </li>
+
             </ul>
         </section>
 
         <section>
             <h2>Contact Me</h2>
+
             <div class="contact-links">
-                <a href="https://github.com/travletothefurureprogramming" target="_blank" class="link-btn">GitHub</a>
-                <a href="https://www.instagram.com/grigoris_iosif_/" target="_blank" class="link-btn">Instagram</a>
-                <a href="https://www.youtube.com/@travletothefurureprogramming" target="_blank" class="link-btn">Technical YouTube</a>
-                <a href="https://www.youtube.com/@DanteRespawnTheory" target="_blank" class="link-btn">Gaming YouTube</a>
+                <a href="https://github.com/travletothefurureprogramming" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/grigoris_iosif_/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@travletothefurureprogramming" target="_blank">Technical YouTube</a>
+                <a href="https://www.youtube.com/@DanteRespawnTheory" target="_blank">Gaming YouTube</a>
             </div>
+
             <p class="contact-email" onclick="copyEmail(this)">
-                Email: <span id="email-text">gregiosifidis2@gmail.com</span>
+                Email:
+                <span id="email-text">gregiosifidis2@gmail.com</span>
                 <span class="copy-hint">(Click to copy)</span>
             </p>
         </section>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Grigorios Iosifidis. Created with simplicity.</p>
+        © 2026 Grigorios Iosifidis. Created with simplicity.
     </footer>
 
     <script>
         function copyEmail(element) {
-            const email = document.getElementById('email-text').innerText;
-            navigator.clipboard.writeText(email)
-            const hint = element.querySelector('.copy-hint'); 
-            hint.innerText = '(Copied!)'
-            setTimeout(() => { hint.innerText = '(Click to copy)'; }, 2000);       
-        
+            const email = document.getElementById("email-text").innerText;
+
+            navigator.clipboard.writeText(email);
+
+            const hint = element.querySelector(".copy-hint");
+            hint.innerText = "(Copied!)";
+
+            setTimeout(function() {
+                hint.innerText = "(Click to copy)";
+            }, 2000);
         }
     </script>
+
 </body>
 </html>
+```
