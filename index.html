@@ -3,49 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaHome</title>
+    <title>NovaHome - Grigorios Iosifidis</title>
+    <style>
+        /* Base Reset & Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #161920;
+            --border-color: #262a36;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        /* Container Limit */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            font-weight: 400;
+        }
+
+        /* Content Sections */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.975rem;
+        }
+
+        /* Skills Pill Tags */
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skills-list li {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--text-main);
+        }
+
+        /* Project Cards */
+        .projects-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .project-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-color 0.2s ease;
+        }
+
+        .project-item:hover {
+            border-color: #3b4252;
+        }
+
+        .project-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        /* Link Buttons */
+        .link-btn {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .link-btn:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* Contact Links Grid */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-email {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 <body>
-    <h1>I'm Grigorios Iosifidis</h1>
-    <h3>Student and programmer</h3>
 
-    <h2>Summary</h2>
-    <p>
-        I am an ambitious student with a deep passion for the intersection of Robotics and Artificial Intelligence (AI). 
-        I have a strong foundation in programming (Python/C++) and embedded systems (Arduino). 
-        My goal is to create autonomous systems and work as an Engineer in leading companies.
-    </p>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>I'm Grigorios Iosifidis</h1>
+            <p class="subtitle">Student and Programmer</p>
+        </header>
 
-    <h2>My skils</h2>
-    <ul>
-        <li>
-            Robotics
-        </li>
-        <li>
-            Python
-        </li>
-        <li>
-            Leadership
-        </li>
-        <li>
-            Problem Solving
-        </li>
-    </ul>
+        <!-- Summary -->
+        <section>
+            <h2>Summary</h2>
+            <p>
+                I am an ambitious student with a deep passion for the intersection of Robotics and Artificial Intelligence (AI). 
+                I have a strong foundation in programming (Python/C++) and embedded systems (Arduino). 
+                My goal is to create autonomous systems and work as an engineer in leading companies.
+            </p>
+        </section>
 
-    <h2>My projects</h2>
-    <p>I have create a lot of projects</p>
-    <ul>
-        <li>Edge-AI Home Monitoring System: <a href="https://github.com/travletothefurureprogramming/Edge-AI-Home-Monitoring-System">GitHub Repo</a></li>
-        <li>Py-Watchdog: Smart Folder Automation Hub: <a href="https://github.com/travletothefurureprogramming/smart_folder_automation">GitHub Repo</a></li>
-        <li>Remote PC Control & Monitoring Server: <a href="https://github.com/travletothefurureprogramming/Remote-PC-Control---Monitoring-Server">GitHub Repo</a></li>
-        <li>NexusAI: <a href="https://github.com/travletothefurureprogramming/NexusAI/">GitHub Repo</a></li>
-    </ul>
+        <!-- Skills -->
+        <section>
+            <h2>My Skills</h2>
+            <ul class="skills-list">
+                <li>Robotics</li>
+                <li>Python</li>
+                <li>Leadership</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
 
-    <h2>Contact Me</h2>
-    <a href="https://github.com/travletothefurureprogramming">GitHub</a>
-    <a href="https://www.instagram.com/grigoris_iosif_/">instagram</a>
-    <p>Email: gregiosifidis2@gmail.com</p>
-    <a href="https://www.youtube.com/@travletothefurureprogramming">Technicall youtube</a>
-    <a href="https://www.youtube.com/@DanteRespawnTheory">Gaming youtube</a>
+        <!-- Projects -->
+        <section>
+            <h2>My Projects</h2>
+            <ul class="projects-list">
+                <li class="project-item">
+                    <span class="project-title">Edge-AI Home Monitoring System</span>
+                    <a href="https://github.com/travletothefurureprogramming/Edge-AI-Home-Monitoring-System" target="_blank" class="link-btn">Repository &rarr;</a>
+                </li>
+                <li class="project-item">
+                    <span class="project-title">Py-Watchdog: Smart Folder Automation Hub</span>
+                    <a href="https://github.com/travletothefurureprogramming/smart_folder_automation" target="_blank" class="link-btn">Repository &rarr;</a>
+                </li>
+                <li class="project-item">
+                    <span class="project-title">Remote PC Control & Monitoring Server</span>
+                    <a href="https://github.com/travletothefurureprogramming/Remote-PC-Control---Monitoring-Server" target="_blank" class="link-btn">Repository &rarr;</a>
+                </li>
+                <li class="project-item">
+                    <span class="project-title">NexusAI</span>
+                    <a href="https://github.com/travletothefurureprogramming/NexusAI/" target="_blank" class="link-btn">Repository &rarr;</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section>
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="https://github.com/travletothefurureprogramming" target="_blank" class="link-btn">GitHub</a>
+                <a href="https://www.instagram.com/grigoris_iosif_/" target="_blank" class="link-btn">Instagram</a>
+                <a href="https://www.youtube.com/@travletothefurureprogramming" target="_blank" class="link-btn">Technical YouTube</a>
+                <a href="https://www.youtube.com/@DanteRespawnTheory" target="_blank" class="link-btn">Gaming YouTube</a>
+            </div>
+            <p class="contact-email">Email: gregiosifidis2@gmail.com</p>
+        </section>
+    </div>
+
 </body>
 </html>
