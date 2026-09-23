@@ -72,6 +72,27 @@
             font-size: 0.975rem;
         }
 
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #a1a1aa;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c44e;
+        }
+
         .skills-list {
             list-style: none;
             display: flex;
@@ -149,6 +170,10 @@
         <header>
             <h1>I'm Grigorios Iosifidis</h1>
             <p class="subtitle">Student and Programmer</p>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Building & Open for Collaboration
+            </div>
         </header>
 
         <section>
